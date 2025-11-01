@@ -22,6 +22,9 @@ class BookListViewModel @Inject constructor(
     private val _searchQuery = MutableStateFlow<String>("")
     val searchQuery = _searchQuery.asStateFlow()
 
+    init {
+        fetchBooks()
+    }
 
     fun fetchBooks() {
         viewModelScope.launch {
