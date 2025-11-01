@@ -12,5 +12,6 @@ fun BookListItem(modifier: Modifier = Modifier) {
                 // Book name
                 // Row
                     // author name
-                    // rating
+                    // favorite
+                // rating
 }
