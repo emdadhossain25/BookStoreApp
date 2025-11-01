@@ -1,6 +1,7 @@
 package com.example.bookstoreapp.ui.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -26,6 +27,7 @@ fun NavGraph(
         navController = navHostController,
         startDestination = Screen.BookList.route
     ) {
+
         // Book List Screen
         composable(route = Screen.BookList.route) {
             BookList(
@@ -44,7 +46,7 @@ fun NavGraph(
                 }
             )) {
             BookDetailScreen(
-                onBackClick ={
+                onBackClick = {
                     navHostController.popBackStack()
                 }
             )

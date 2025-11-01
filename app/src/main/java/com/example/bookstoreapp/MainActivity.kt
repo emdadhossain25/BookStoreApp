@@ -7,7 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.example.bookstoreapp.ui.booklist.BookList
+import androidx.navigation.compose.rememberNavController
+import com.example.bookstoreapp.ui.navigation.NavGraph
 import com.example.bookstoreapp.ui.theme.BookStoreAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -19,10 +20,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             BookStoreAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    BookList(
-                        onBookClick = {}
-                    )
-
+                    val navController = rememberNavController()
+                    NavGraph(navHostController = navController)
                 }
             }
         }
